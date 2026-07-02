@@ -5,7 +5,8 @@
 
 int main()
 {
-    std::cout << "mat kirilla\n";
+    std::cout << "mat kirilla\n";;
+    std::cout << "mat kirilla\n";;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
