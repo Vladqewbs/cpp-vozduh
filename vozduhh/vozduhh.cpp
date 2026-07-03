@@ -1,22 +1,25 @@
-﻿// vozduhh.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
+#include <string.h>
+const int nameLeangth = 30;
+const int tabelNumberLeangth = 30;
 
-#include <iostream>
+struct Rabotyaga
+{
+    char name[nameLeangth],secondNamne[nameLeangth],fatherName[nameLeangth],tabelNumber[tabelNumberLeangth];
+    int year, month,workHours;
+
+    Rabotyaga(char* _name,char* _secondName,char* _fatherName,char* _tabelNumber,int _year,int _month,int _workHours) :year(_year),month(_month),workHours(_workHours)
+    {
+        strncpy(name, _name, nameLeangth);
+        strncpy(secondNamne, _secondName, nameLeangth);
+        strncpy(fatherName, _fatherName, nameLeangth);
+        strncpy(tabelNumber, _tabelNumber, nameLeangth);
+    }
+};
 
 int main()
 {
-    std::cout << "mat kirilla\n";;
-    std::cout << "mat kirilla\n";;
-    std::cout << "mat kirilla\n";;
+    
 }
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
 
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
