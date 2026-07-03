@@ -3,7 +3,8 @@
 #include <string.h>
 const int nameLeangth = 30;
 const int tabelNumberLeangth = 30;
-const int tax = 12;
+const double tax = 0.12;
+const int payPerHour = 100;
 
 struct Rabotyaga
 {
@@ -20,19 +21,24 @@ struct Rabotyaga
         if (workHours>144)
         {
             overtimeWorkHours = workHours - 144;
+            workHours = 144;
         }
     } 
 };
 
 int salaryCalculation(Rabotyaga rabotyaga)
 {
-    return 0;
+    int salary = 0;
+    salary = ((rabotyaga.workHours * payPerHour) + (rabotyaga.overtimeWorkHours * 2 * payPerHour)) * (1.00 - tax);
+
+    return salary;
 }
 
 int main()
 {
-    Rabotyaga ivan("123", "123", "123", "123", 1, 1, 1);
-    salaryCalculation(ivan);
+    Rabotyaga ivan("123", "123", "123", "123", 1, 1, 156);
+    
+    return salaryCalculation(ivan);
 }
 
 
