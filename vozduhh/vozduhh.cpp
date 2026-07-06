@@ -110,8 +110,8 @@ int main()
     AddToWorkerList(ivan);
     Rabotyaga ivan2("ivan2", "ivanov", "trampovich", "1", 2025, 3, 120);
     AddToWorkerList(ivan2);
-    Rabotyaga snya("snya", " ", " ", "2", 1, 1, 1);
-    AddToWorkerList(snya);
+    Rabotyaga sanya("sanya", " ", " ", "2", 1, 1, 1);
+    AddToWorkerList(sanya);
     Rabotyaga MishaXui("MishaXui", " ", " ", "3", 1, 1, 1);
     AddToWorkerList(MishaXui);
 

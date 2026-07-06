@@ -1,0 +1,19 @@
+[1mdiff --git a/vozduhh/vozduhh.cpp b/vozduhh/vozduhh.cpp[m
+[1mindex 746ba57..73bb0e6 100644[m
+[1m--- a/vozduhh/vozduhh.cpp[m
+[1m+++ b/vozduhh/vozduhh.cpp[m
+[36m@@ -110,12 +110,9 @@[m [mint main()[m
+     AddToWorkerList(ivan);[m
+     Rabotyaga ivan2("ivan2", "ivanov", "trampovich", "1", 2025, 3, 120);[m
+     AddToWorkerList(ivan2);[m
+[31m-    Rabotyaga snya("snya", " ", " ", "2", 1, 1, 1);[m
+[31m-    AddToWorkerList(snya);[m
+[31m-    Rabotyaga MishaXui("MishaXui", " ", " ", "3", 1, 1, 1);[m
+[31m-    AddToWorkerList(MishaXui);[m
+[32m+[m[41m    [m
+ [m
+[31m-    RemoveFromWorkerList(MishaXui);[m
+[32m+[m[41m   [m
+    [m
+     for (size_t i = 0; i < counter; i++)[m
+     {[m
