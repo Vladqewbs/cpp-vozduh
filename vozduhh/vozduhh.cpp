@@ -12,7 +12,7 @@ const int payPerHour = 100;
 const int workerListSize = 30;
 int counter = 0;
 
-struct Rabotyaga
+struct Rabotyaga         // Структура, её поля и конструкторы. 
 {
     char name[nameLength];
     char secondName[nameLength];
@@ -52,13 +52,13 @@ struct Rabotyaga
     }
 };
 
-Rabotyaga* rabotyagaList = new Rabotyaga[workerListSize];
+Rabotyaga* rabotyagaList = new Rabotyaga[workerListSize];           // Инициализация массива структур.
 
-int salaryCalculation(const Rabotyaga& rabotyaga)
+int salaryCalculation(const Rabotyaga& rabotyaga)      // Функция расчёта зар. платы за месяц, с учётом сверхурочных.
 {
     return ((rabotyaga.workHours * payPerHour) + (rabotyaga.overtimeWorkHours * 2 * payPerHour)) * (1.00 - tax);
 }
-int dataCheck(int startYear, int startMonth, int endYear, int endMonth,int currYear,int currMonth) 
+int dataCheck(int startYear, int startMonth, int endYear, int endMonth,int currYear,int currMonth)    // Функция проверки совпадения периода с нужным диапазоном.
 {
     if (currYear >= startYear && currYear <= endYear)
     {
@@ -83,7 +83,7 @@ int dataCheck(int startYear, int startMonth, int endYear, int endMonth,int currY
     }
     return 0;
 }
-int salaryCalculationForPeriod(const char* _tabelnumber, int startYear, int startMonth, int endYear, int endMonth)
+int salaryCalculationForPeriod(const char* _tabelnumber, int startYear, int startMonth, int endYear, int endMonth)     // Функция расчёта зар. платы за определенный период.
 {
     int SumSalary = 0;
     for (int i = 0; i < counter; i++)
@@ -99,7 +99,7 @@ int salaryCalculationForPeriod(const char* _tabelnumber, int startYear, int star
     return SumSalary;
 }
 
-void AddToWorkerList(Rabotyaga& rabotyaga)
+void AddToWorkerList(Rabotyaga& rabotyaga)            // Добавление сотрудника в массив.
 {
     if (counter < workerListSize)
     {
@@ -108,7 +108,7 @@ void AddToWorkerList(Rabotyaga& rabotyaga)
     }
 }
 
-void RemoveFromWorkerList(const char* _tabelnumber)
+void RemoveFromWorkerList(const char* _tabelnumber)        // Удаление сотрудника из массива.
 {
     int indexToRemove = -1;
     for (int i = 0; i < counter; i++)
@@ -129,7 +129,8 @@ void RemoveFromWorkerList(const char* _tabelnumber)
     counter--;
 }
 
-void printList() {
+void printList()                      // Вывод всех сотрудников.
+{
     for (size_t i = 0; i < counter; i++)
     {
         std::cout << "Сотрудник №" << i + 1 << std::endl;
@@ -146,7 +147,7 @@ void printList() {
         std::cout << "\n\n\n\n";
     }
 }
-void saveToFile()
+void saveToFile()     // Сохранение всей информации в файл.
 {
     FILE* f;
     errno_t err = fopen_s(&f, "workers.dat", "wb");
@@ -167,7 +168,7 @@ void saveToFile()
     std::cout << "Данные сохранены в файл workers.dat" << std::endl;
 }
 
-void loadFromFile()
+void loadFromFile()            // Загрузка из файла.
 {
 
     FILE* f;
@@ -189,7 +190,8 @@ void loadFromFile()
     std::cout << "Данные загружены из файла workers.dat" << std::endl;
 }
 
-void secondNameSort() {
+void secondNameSort()           // Сортировка вставками по фамилии.
+{ 
     for (size_t i = 0; i < counter - 1; i++)
     {
         int indexMax = 0;
@@ -209,10 +211,6 @@ void secondNameSort() {
 
 int main()
 {
-    Rabotyaga a("evgen", "babaiko", "", "", 2000, 2000, 2000);
-    Rabotyaga b("vlados", "cicka", "", "", 2000, 2000, 2000);
-    AddToWorkerList(b);
-    AddToWorkerList(a);
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
@@ -229,7 +227,8 @@ int main()
         std::cout << "5 - Выход" << std::endl;
         std::cin >> ans;
         switch (ans) {
-        case 1: {
+        case 1: 
+        {
             char _name[nameLength], _secondNamne[nameLength], _fatherName[nameLength], _tabelNumber[tabelNumberLength];
             int _year, _month, _workHours;
             std::cout << "Введите фамилию сотрудника: " << std::endl;
@@ -295,4 +294,3 @@ int main()
     delete[] rabotyagaList;
     return 0;
 }
-zhopa;
