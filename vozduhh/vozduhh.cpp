@@ -249,6 +249,7 @@ int main()
             Rabotyaga tmp(_name, _secondNamne, _fatherName, _tabelNumber, _year, _month, _workHours);
             AddToWorkerList(tmp);
             secondNameSort();
+            break;
         }
         case 2:
         {
@@ -256,6 +257,7 @@ int main()
             std::cout << "Введите табельный номер сотрудника, которого хотите удалить: " << std::endl;
             std::cin >> _tabelnumber;
             RemoveFromWorkerList(_tabelnumber);
+            break;
 
         }
         case 3:
@@ -273,10 +275,18 @@ int main()
             std::cout << "Введите конечный месяц: " << std::endl;
             std::cin >> _endMonth;
             salaryCalculationForPeriod(_tabelnumber, _startYear, _startMonth, _endYear, _endMonth);
+            break;
         }
-        case 4: printList();
-        case 5: flag = false;
+        case 4: {
+            printList();
+            break;
         }
+        case 5: {
+            flag = false;
+            break;
+        }
+        default: std::cout << "Неправильный номер операции" << std::endl;
+       }
 
     } while (flag);
 
